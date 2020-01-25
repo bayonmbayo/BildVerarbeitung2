@@ -11,6 +11,11 @@ import javax.imageio.ImageIO;
 import de.bild.info.BildInfo;
 import de.bild.utils.Utils;
 
+/**
+ * 
+ * Hier wird das Programm ausgefuehret 
+ *
+ */
 public class BildVerarbeitung {
 	
 	public static void main(String[] args) throws IOException {
@@ -25,7 +30,7 @@ public class BildVerarbeitung {
 		}
 		
 		
-		// Verarbeitung für drei Bilder (z.b. 0221.bmp, 0344.bmp, 3198.bmp)
+		// Verarbeitung für drei Bilder (z.b 0221.bmp, 0344.bmp, 3198.bmp)
 		for(int t = 0; t < 3; t++) {
 			
 			BildInfo infoa = new BildInfo();

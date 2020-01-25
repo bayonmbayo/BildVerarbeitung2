@@ -1,8 +1,6 @@
 package de.bild.info;
 
 /**
- * 
- * @author bayon
  *
  * In diese Klasse stehen die Informationen eines Bildes 
  * entsprechend seines Vorspanns und seine Pixels
