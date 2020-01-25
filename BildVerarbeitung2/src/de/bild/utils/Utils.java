@@ -11,8 +11,8 @@ import de.bild.info.BildInfo;
 
 /**
  * 
- * In dieser Klasse stehen alle Implementierungen von Methoden, die 
- * man für die BildVerarbeitung zu machen 
+ * In dieser Klasse stehen die Implementierungen von Methoden, die 
+ * die BildVerarbeitung macht 
  * 
  * */
 public class Utils {
