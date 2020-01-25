@@ -12,7 +12,7 @@ import de.bild.info.BildInfo;
 import de.bild.utils.Utils;
 
 /**
- * 
+ *
  * 
  * Hier wird das Programm ausgefuehret 
  *
