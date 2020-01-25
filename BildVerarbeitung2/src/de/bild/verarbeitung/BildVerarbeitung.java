@@ -13,7 +13,6 @@ import de.bild.utils.Utils;
 
 /**
  *
- * 
  * Hier wird das Programm ausgefuehret 
  *
  */
