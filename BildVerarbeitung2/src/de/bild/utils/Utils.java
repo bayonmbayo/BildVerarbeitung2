@@ -11,7 +11,7 @@ import de.bild.info.BildInfo;
 
 /**
  * 
- * In dieser Klasse stehen die Implementierungen von Methoden, die 
+ * In dieser Klasse steht die Implementierung von Methoden, die 
  * die BildVerarbeitung macht 
  * 
  * */
