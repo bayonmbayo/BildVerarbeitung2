@@ -9,8 +9,27 @@ import javax.imageio.ImageIO;
 
 import de.bild.info.BildInfo;
 
+/**
+ * In dieser Klasse stehen alle Implementierungen von Methoden, die 
+ * man für die BildVerarbeitung zu machen 
+ * 
+ * */
 public class Utils {
 	
+	
+	
+	/**
+	 * 
+	 * @param fileName
+	 * @param info 
+	 * @throws IOException
+	 * 
+	 * Diese Methode gibt die folgende Informationen von Bilder zurück :
+	 *     - Der Vorspann, der in einem unidimenesionalen Array gespeichert wird 
+	 *       (z.b für das Bild von 150 x 100 werden 1078 bytes gespeichert)
+	 * 	   - Die einzelne Bildpixels, die in einem zweidimensionalen Array gespeichert werden
+	 *       (z.b für das Bild von 150 x 100 werden 15000 bytes gespeichert)
+	 */
 	public static void BitmapToByte(String fileName, BildInfo info) throws IOException {
 		
 		byte[][] imgarray = new byte[100][150];
@@ -55,6 +74,17 @@ public class Utils {
 		
 	}
 	
+	/**
+	 * 
+	 * @param info
+	 * @return int[][]
+	 * 
+	 * Diese Methode konvertiert und speichert die einzelne Bytes eines zweidimensionalen Bytesarray
+	 * in einem zweidimensionalen Intarray 
+	 * 
+	 * (-128.....127) ------> (0.....255)
+	 * 
+	 */
 	public static int[][] ByteToPixel(BildInfo info) {
 		int[][] pixelInt = new int[100][150];
 		for(int i = 0; i < 100; i++) {
@@ -72,7 +102,19 @@ public class Utils {
 		return pixelInt;
 	}
 	
-	public static void ByteToPixel(int[][] pixelInt, BildInfo info) {
+	
+	/**
+	 * 
+	 * @param pixelInt
+	 * @param info
+	 * 
+	 * Diese Methode konvertiert und speichert die einzelne Pixel eines zweidimensionalen Intarray
+	 * in einem zweidimensionalen Bytearray 
+	 * 
+	 * (0 ... 255) ----> (-127 ... 128)
+	 * 
+	 */
+	public static void PixelToByte(int[][] pixelInt, BildInfo info) {
 		for(int i = 0; i < 100; i++) {
 	    	for(int j = 0; j < 150; j++) {
 	    		int p = pixelInt[i][j];
@@ -87,6 +129,16 @@ public class Utils {
 	    }
 	}
 	
+	/**
+	 * 
+	 * @param pixela
+	 * @param pixelb
+	 * @return
+	 * 
+	 * Diese Methode macht die Division zwischen zwei zweidimensionale Intarrays
+	 * 
+	 */
+	
 	public static double[][] PixelDoubleDivision(int[][] pixela, int [][] pixelb) {
 		double[][] pixelDouble = new double[100][150];
 		for(int i = 0; i < 100; i++) {
@@ -97,6 +149,16 @@ public class Utils {
 		return pixelDouble;
 		
 	}
+	
+	/**
+	 * 
+	 * @param pixel
+	 * @return
+	 * 
+	 * Diese Methode konvertiert und speichert die einzelne Pixel eines zweidimensionalen Doublearray
+	 * in einem zweidimensionalen Intarray 
+	 * 
+	 */
 	
 	public static int[][] DoubletoInt(double[][] pixel) {
 		int[][] pixelInt = new int[100][150];
@@ -109,6 +171,18 @@ public class Utils {
 		
 	}
 	
+	
+	/**
+	 * 
+	 * @param fileName
+	 * @param info
+	 * @return
+	 * @throws IOException
+	 * 
+	 * Diese Methode berechnet das GraustufenMittelwert eines Bildes
+	 * 
+	 * 
+	 */
 	public static double GraustufenMittelwert(String fileName, BildInfo info) throws IOException{
 		BitmapToByte(fileName, info);
 		BildInfo tmpInfo = info;
@@ -126,6 +200,18 @@ public class Utils {
 		return mittelwert;
 	}
 	
+	
+	/**
+	 * 
+	 * @param infoa
+	 * @param infob
+	 * @return
+	 * 
+	 * Diese Methode setzt ein zweidimensionales Bytearray der verarbeiteten Pixels (BildPixel) und
+	 * ein unidimensionales Bytearray (Vorspann) zusammen. sie (ConvertImage) speichert in einem
+	 * unidimensionalen Bytearray
+	 * 
+	 */
 	public static byte[] ConvertImage(BildInfo infoa, BildInfo infob) {
 		byte[] finaldata = new byte[16078];
 		for(int i = 0; i < 1078; i++) {
@@ -135,7 +221,6 @@ public class Utils {
 		int i = 0;
 	    int j = 0;
 	    int k = 1078;
-	    int a = 0;
 	    while(i < 100) {
 	    	byte tmp = infob.pixel[i][j];
 	    	//System.out.println(tmp);
